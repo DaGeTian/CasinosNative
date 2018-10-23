@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="pghgsa90" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="m8ba0" name="Main.xml" path="/" exported="true"/>
+    <image id="jy2p2" name="YuanYellow.png" path="/Image/"/>
+    <image id="jy2p3" name="31.png" path="/Image/"/>
+    <image id="jy2p4" name="BgChatItem.png" path="/Image/"/>
+    <image id="jy2p5" name="BgGift.png" path="/Image/"/>
+    <image id="jy2p6" name="BgSign.png" path="/Image/"/>
+    <image id="jy2p7" name="BgText.png" path="/Image/"/>
+    <image id="jy2p8" name="BgTransparent.png" path="/Image/" scale="9grid" scale9grid="10,10,20,20"/>
+    <image id="jy2p9" name="BtnClose.png" path="/Image/"/>
+    <image id="jy2pa" name="BtnGreen.png" path="/Image/"/>
+    <image id="jy2pb" name="BtnSmallBg.png" path="/Image/"/>
+    <image id="jy2pc" name="BtnTab1.png" path="/Image/"/>
+    <image id="jy2pd" name="BtnTab1Light.png" path="/Image/"/>
+    <image id="jy2pe" name="BtnYellow.png" path="/Image/"/>
+    <image id="jy2pf" name="CardBack.png" path="/Image/"/>
+    <image id="jy2pg" name="ChatBgLeft.png" path="/Image/"/>
+    <image id="jy2ph" name="ChatBgLeft1 .png" path="/Image/"/>
+    <image id="jy2pi" name="ChatBgLeft2.png" path="/Image/"/>
+    <image id="jy2pj" name="ChatBgRight.png" path="/Image/"/>
+    <image id="jy2pk" name="ChatBgRight1.png" path="/Image/"/>
+    <image id="jy2pl" name="Chip.png" path="/Image/"/>
+    <image id="jy2pm" name="CommonBlueLightBg.png" path="/Image/"/>
+    <image id="jy2pn" name="CommonDarkBg.png" path="/Image/"/>
+    <image id="jy2po" name="CountDownBg.png" path="/Image/"/>
+    <image id="jy2pp" name="DiamondIcon.png" path="/Image/"/>
+    <image id="jy2pq" name="DiamondIcon0.png" path="/Image/"/>
+    <image id="jy2ps" name="Horn.png" path="/Image/"/>
+    <image id="jy2pt" name="IconBi.png" path="/Image/"/>
+    <image id="jy2pu" name="IconWait.png" path="/Image/"/>
+    <image id="jy2pv" name="Line03.png" path="/Image/"/>
+    <image id="jy2pw" name="MsgTips.png" path="/Image/"/>
+    <image id="jy2px" name="OnlineReward.png" path="/Image/"/>
+    <image id="jy2py" name="OperateCheckBg.png" path="/Image/"/>
+    <image id="jy2pz" name="OperateChecked.png" path="/Image/"/>
+    <image id="jy2p10" name="PlayerShadow.png" path="/Image/"/>
+    <image id="jy2p11" name="ProgressBg1.png" path="/Image/"/>
+    <image id="jy2p12" name="ProgressFg1.png" path="/Image/"/>
+    <image id="jy2p13" name="Rank1.png" path="/Image/"/>
+    <image id="jy2p14" name="Rank2.png" path="/Image/"/>
+    <image id="jy2p15" name="Rank3.png" path="/Image/"/>
+    <image id="jy2p16" name="Reward.png" path="/Image/"/>
+    <image id="jy2p17" name="RewardText2.png" path="/Image/"/>
+    <image id="jy2p18" name="Shade.png" path="/Image/" scale="9grid" scale9grid="0,0,28,28"/>
+    <image id="jy2p19" name="SwitchOff.png" path="/Image/"/>
+    <image id="jy2p1a" name="SwitchOn.png" path="/Image/"/>
+    <image id="jy2p1b" name="SwitchTrigger.png" path="/Image/"/>
+    <image id="jy2p1c" name="TabDark.png" path="/Image/"/>
+    <image id="jy2p1d" name="TabLight.png" path="/Image/"/>
+    <image id="jy2p1e" name="Tips-底板.png" path="/Image/"/>
+    <image id="jy2p1f" name="UI2_通用_叶子1.png" path="/Image/"/>
+    <image id="jy2p1g" name="VIPBg.png" path="/Image/"/>
+    <image id="jy2p1h" name="WaitLight.png" path="/Image/"/>
+    <image id="jy2p1i" name="YuanBlue.png" path="/Image/"/>
+    <component id="jy2p1j" name="BtnClose.xml" path="/Component/"/>
+    <image id="jy2p1k" name="BgSmall.png" path="/Image/"/>
+    <component id="jy2p1l" name="Btn1.xml" path="/Component/"/>
+  </resources>
+  <publish name="Main" path="D:\CasinosNative\Assets\Resources\Ui"/>
+</packageDescription>
