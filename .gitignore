@@ -34,3 +34,18 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# CasinosClient
+.DS_Store
+Assets/.idea/
+Assets/.DS_Store
+ProjectUi/.objs/
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-Editor-firstpass.csproj
+Assembly-CSharp-firstpass.csproj
+CasinosNative.csproj
+CasinosNative.Editor.csproj
+CasinosNative.Editor.Plugins.csproj
+CasinosNative.Plugins.csproj
+CasinosNative.sln
