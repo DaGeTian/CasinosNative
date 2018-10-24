@@ -48,7 +48,7 @@ namespace Casinos
         //---------------------------------------------------------------------
         void _onClickBtnClose()
         {
-            TxtInfo.text = "OnClick BtnClose";
+            TxtInfo.text = "OnClick BtnClose 1";
 
             Application.Quit();
         }

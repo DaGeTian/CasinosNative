@@ -13,6 +13,9 @@ namespace Casinos
         //---------------------------------------------------------------------
         void Awake()
         {
+            Application.targetFrameRate = 60;
+            QualitySettings.vSyncCount = 0;
+
             CasinosContext = new CasinosContext();
         }
 

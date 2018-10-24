@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<packageDescription id="91c1t6dh" jpegQuality="80" compressPNG="true">
-  <resources>
-    <component id="evz70" name="Main.xml" path="/"/>
-  </resources>
-  <publish name="Main" path="D:\CasinosNative\Assets\Resources\Ui\Main"/>
-</packageDescription>
