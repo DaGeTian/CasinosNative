@@ -46,7 +46,7 @@ namespace Casinos
         //---------------------------------------------------------------------
         void Start()
         {
-            Debug.Log("MbNative.Start() Bugly Init！");
+            CasinosContext.Instance.AddLog("OpenInstall.RegisterWakeupHandler(_onWakeupFinish)");
 
             var openinstall = GetComponent<io.openinstall.unity.OpenInstall>();
             openinstall.RegisterWakeupHandler(_onWakeupFinish);
