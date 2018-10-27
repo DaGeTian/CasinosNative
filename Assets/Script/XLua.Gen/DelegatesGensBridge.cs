@@ -127,7 +127,35 @@ namespace XLua
 #endif
 		}
         
-		public void __Gen_Delegate_Imp4()
+		public void __Gen_Delegate_Imp4(XLua.LuaTable p0, string p1)
+		{
+#if THREAD_SAFE || HOTFIX_ENABLE
+            lock (luaEnv.luaEnvLock)
+            {
+#endif
+                RealStatePtr L = luaEnv.rawL;
+                int err_func =LuaAPI.load_error_func(L, errorFuncRef);
+                ObjectTranslator translator = luaEnv.translator;
+                
+                LuaAPI.lua_getref(L, luaReference);
+                
+                translator.Push(L, p0);
+                LuaAPI.lua_pushstring(L, p1);
+                
+                int __gen_error = LuaAPI.lua_pcall(L, 2, 0, err_func);
+                if (__gen_error != 0)
+                    luaEnv.ThrowExceptionFromError(err_func - 1);
+                
+                
+                
+                LuaAPI.lua_settop(L, err_func - 1);
+                
+#if THREAD_SAFE || HOTFIX_ENABLE
+            }
+#endif
+		}
+        
+		public void __Gen_Delegate_Imp5()
 		{
 #if THREAD_SAFE || HOTFIX_ENABLE
             lock (luaEnv.luaEnvLock)
@@ -153,7 +181,7 @@ namespace XLua
 #endif
 		}
         
-		public void __Gen_Delegate_Imp5(string p0)
+		public void __Gen_Delegate_Imp6(string p0)
 		{
 #if THREAD_SAFE || HOTFIX_ENABLE
             lock (luaEnv.luaEnvLock)
@@ -180,7 +208,7 @@ namespace XLua
 #endif
 		}
         
-		public void __Gen_Delegate_Imp6(string[] p0)
+		public void __Gen_Delegate_Imp7(string[] p0)
 		{
 #if THREAD_SAFE || HOTFIX_ENABLE
             lock (luaEnv.luaEnvLock)
@@ -207,7 +235,7 @@ namespace XLua
 #endif
 		}
         
-		public void __Gen_Delegate_Imp7(byte[] p0)
+		public void __Gen_Delegate_Imp8(byte[] p0)
 		{
 #if THREAD_SAFE || HOTFIX_ENABLE
             lock (luaEnv.luaEnvLock)
@@ -222,34 +250,6 @@ namespace XLua
                 LuaAPI.lua_pushstring(L, p0);
                 
                 int __gen_error = LuaAPI.lua_pcall(L, 1, 0, err_func);
-                if (__gen_error != 0)
-                    luaEnv.ThrowExceptionFromError(err_func - 1);
-                
-                
-                
-                LuaAPI.lua_settop(L, err_func - 1);
-                
-#if THREAD_SAFE || HOTFIX_ENABLE
-            }
-#endif
-		}
-        
-		public void __Gen_Delegate_Imp8(XLua.LuaTable p0, string p1)
-		{
-#if THREAD_SAFE || HOTFIX_ENABLE
-            lock (luaEnv.luaEnvLock)
-            {
-#endif
-                RealStatePtr L = luaEnv.rawL;
-                int err_func =LuaAPI.load_error_func(L, errorFuncRef);
-                ObjectTranslator translator = luaEnv.translator;
-                
-                LuaAPI.lua_getref(L, luaReference);
-                
-                translator.Push(L, p0);
-                LuaAPI.lua_pushstring(L, p1);
-                
-                int __gen_error = LuaAPI.lua_pcall(L, 2, 0, err_func);
                 if (__gen_error != 0)
                     luaEnv.ThrowExceptionFromError(err_func - 1);
                 
@@ -1047,39 +1047,44 @@ namespace XLua
 			    return new Casinos.DelegateLua4(__Gen_Delegate_Imp3);
 			}
 		
-		    if (type == typeof(System.Action))
+		    if (type == typeof(Casinos.DelegateLua5))
 			{
-			    return new System.Action(__Gen_Delegate_Imp4);
-			}
-		
-		    if (type == typeof(FairyGUI.EventCallback0))
-			{
-			    return new FairyGUI.EventCallback0(__Gen_Delegate_Imp4);
-			}
-		
-		    if (type == typeof(FairyGUI.GTweenCallback))
-			{
-			    return new FairyGUI.GTweenCallback(__Gen_Delegate_Imp4);
-			}
-		
-		    if (type == typeof(System.Action<string>))
-			{
-			    return new System.Action<string>(__Gen_Delegate_Imp5);
-			}
-		
-		    if (type == typeof(System.Action<string[]>))
-			{
-			    return new System.Action<string[]>(__Gen_Delegate_Imp6);
-			}
-		
-		    if (type == typeof(System.Action<byte[]>))
-			{
-			    return new System.Action<byte[]>(__Gen_Delegate_Imp7);
+			    return new Casinos.DelegateLua5(__Gen_Delegate_Imp4);
 			}
 		
 		    if (type == typeof(System.Action<XLua.LuaTable, string>))
 			{
-			    return new System.Action<XLua.LuaTable, string>(__Gen_Delegate_Imp8);
+			    return new System.Action<XLua.LuaTable, string>(__Gen_Delegate_Imp4);
+			}
+		
+		    if (type == typeof(System.Action))
+			{
+			    return new System.Action(__Gen_Delegate_Imp5);
+			}
+		
+		    if (type == typeof(FairyGUI.EventCallback0))
+			{
+			    return new FairyGUI.EventCallback0(__Gen_Delegate_Imp5);
+			}
+		
+		    if (type == typeof(FairyGUI.GTweenCallback))
+			{
+			    return new FairyGUI.GTweenCallback(__Gen_Delegate_Imp5);
+			}
+		
+		    if (type == typeof(System.Action<string>))
+			{
+			    return new System.Action<string>(__Gen_Delegate_Imp6);
+			}
+		
+		    if (type == typeof(System.Action<string[]>))
+			{
+			    return new System.Action<string[]>(__Gen_Delegate_Imp7);
+			}
+		
+		    if (type == typeof(System.Action<byte[]>))
+			{
+			    return new System.Action<byte[]>(__Gen_Delegate_Imp8);
 			}
 		
 		    if (type == typeof(System.Action<XLua.LuaTable, string, float>))

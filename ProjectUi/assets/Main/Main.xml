@@ -4,42 +4,49 @@
     <image id="n3_jy2p" name="n3" src="jy2p5" fileName="Image/BgGift.png" xy="-10,-10" size="1150,660">
       <relation target="" sidePair="width-width,height-height"/>
     </image>
-    <image id="n5_jy2p" name="n5" src="jy2p8" fileName="Image/BgTransparent.png" xy="65,569" size="1005,40">
+    <image id="n5_jy2p" name="n5" src="jy2p8" fileName="Image/BgTransparent.png" xy="43,586" size="1005,40">
       <relation target="" sidePair="center-center,bottom-bottom"/>
     </image>
-    <richtext id="n6_jy2p" name="TxtInfo" xy="78,565" size="978,46" fontSize="22" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="">
+    <richtext id="n6_jy2p" name="TxtInfo" xy="56,582" size="978,46" fontSize="22" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="">
       <relation target="" sidePair="center-center,bottom-bottom"/>
     </richtext>
     <component id="n2_jy2p" name="BtnClose" src="jy2p1j" fileName="Component/BtnClose.xml" xy="1084,16">
       <relation target="" sidePair="right-right,top-top"/>
     </component>
-    <component id="n4_jy2p" name="BtnBugly" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,50" size="128,47">
+    <component id="n4_jy2p" name="BtnBugly" src="jy2p1l" fileName="Component/Btn1.xml" xy="31,50" size="128,47">
       <relation target="" sidePair="left-left,top-top"/>
       <Button title="Bugly" titleColor="#ffffff" titleFontSize="20"/>
     </component>
-    <component id="n7_jy2p" name="BtnLuaLog" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,105" size="128,47">
+    <component id="n7_jy2p" name="BtnLuaLog" src="jy2p1l" fileName="Component/Btn1.xml" xy="31,105" size="128,47">
       <relation target="" sidePair="left-left,top-top"/>
       <Button title="LuaLog" titleColor="#ffffff" titleFontSize="20"/>
     </component>
-    <component id="n8_jy2p" name="BtnBugly2" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,160" size="128,47">
+    <component id="n8_jy2p" name="BtnBugly2" src="jy2p1l" fileName="Component/Btn1.xml" xy="31,160" size="128,47">
       <relation target="" sidePair="left-left,top-top"/>
       <Button title="Bugly" titleColor="#ffffff" titleFontSize="20"/>
     </component>
-    <component id="n9_jy2p" name="BtnBugly3" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,215" size="128,47">
+    <component id="n9_jy2p" name="BtnBugly3" src="jy2p1l" fileName="Component/Btn1.xml" xy="31,215" size="128,47">
       <relation target="" sidePair="left-left,top-top"/>
       <Button title="Bugly" titleColor="#ffffff" titleFontSize="20"/>
     </component>
-    <component id="n10_jy2p" name="BtnBugly4" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,270" size="128,47">
+    <component id="n10_jy2p" name="BtnBugly4" src="jy2p1l" fileName="Component/Btn1.xml" xy="31,270" size="128,47">
       <relation target="" sidePair="left-left,top-top"/>
       <Button title="Bugly" titleColor="#ffffff" titleFontSize="20"/>
     </component>
-    <component id="n11_jy2p" name="BtnBugly5" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,325" size="128,47">
+    <component id="n11_jy2p" name="BtnBugly5" src="jy2p1l" fileName="Component/Btn1.xml" xy="31,325" size="128,47">
       <relation target="" sidePair="left-left,top-top"/>
       <Button title="Bugly" titleColor="#ffffff" titleFontSize="20"/>
     </component>
-    <component id="n12_jy2p" name="BtnBugly6" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,380" size="128,47">
+    <component id="n12_jy2p" name="BtnBugly6" src="jy2p1l" fileName="Component/Btn1.xml" xy="31,380" size="128,47">
       <relation target="" sidePair="left-left,top-top"/>
       <Button title="Bugly" titleColor="#ffffff" titleFontSize="20"/>
     </component>
+    <list id="n14_gg2o" name="ListLog" xy="216,50" size="840,496" layout="flow_vt" overflow="scroll" scrollBarFlags="80" scrollBar="auto">
+      <relation target="" sidePair="right-right,bottom-bottom"/>
+      <item url="ui://pghgsa90gg2o1m"/>
+      <item url="ui://pghgsa90gg2o1m"/>
+      <item url="ui://pghgsa90gg2o1m"/>
+      <item url="ui://pghgsa90gg2o1m"/>
+    </list>
   </displayList>
 </component>

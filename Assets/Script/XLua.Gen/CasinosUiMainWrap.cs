@@ -26,7 +26,7 @@ namespace XLua.CSObjectWrap
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "OnCreate", _m_OnCreate);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "OnDestroy", _m_OnDestroy);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "Update", _m_Update);
-			Utils.RegisterFunc(L, Utils.METHOD_IDX, "CallByLua", _m_CallByLua);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "AddLog", _m_AddLog);
 			
 			
 			
@@ -158,7 +158,7 @@ namespace XLua.CSObjectWrap
         }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _m_CallByLua(RealStatePtr L)
+        static int _m_AddLog(RealStatePtr L)
         {
 		    try {
             
@@ -170,8 +170,9 @@ namespace XLua.CSObjectWrap
             
                 
                 {
+                    string _log = LuaAPI.lua_tostring(L, 2);
                     
-                    gen_to_be_invoked.CallByLua(  );
+                    gen_to_be_invoked.AddLog( _log );
                     
                     
                     

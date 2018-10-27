@@ -56,11 +56,10 @@ function Launch:Close()
 end
 
 ---------------------------------------
--- 测试日志
-function Launch:TestLog()
-    print('Launch:TestLog() Env=' .. self.LaunchCfg.Env)
+-- 输出日志
+function Launch:Log(log)
 	local ui_main = self.UiMgr:GetUiMain()
-	ui_main:CallByLua()
+	ui_main:AddLog(log)
 end
 
 ---------------------------------------

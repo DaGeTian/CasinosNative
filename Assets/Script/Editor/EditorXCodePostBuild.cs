@@ -47,7 +47,9 @@ namespace Casinos
 
             // 设置签名
             //proj.SetBuildProperty (target, "CODE_SIGN_IDENTITY", "iPhone Distribution: _______________");
-            //proj.SetBuildProperty (target, "PROVISIONING_PROFILE", "********-****-****-****-************"); 
+            //proj.SetBuildProperty (target, "PROVISIONING_PROFILE", "********-****-****-****-************");
+
+            proj.AddCapability(target, PBXCapabilityType.AssociatedDomains);// OpenInstall
 
             // 保存工程
             proj.WriteToFile(proj_path);
@@ -56,10 +58,8 @@ namespace Casinos
             string plist_path = path + "/Info.plist";
             PlistDocument plist = new PlistDocument();
             plist.ReadFromString(File.ReadAllText(plist_path));
-            //PlistElementDict root_dict = plist.root;
-
-            // 语音所需要的声明，iOS10必须
-            //root_dict.SetString("NSContactsUsageDescription", "是否允许此游戏使用麦克风？");
+            PlistElementDict root_dict = plist.root;
+            root_dict.SetString("com.openinstall.APP_KEY", "znc4d4");// OpenInstall
 
             // 保存plist
             plist.WriteToFile(plist_path);

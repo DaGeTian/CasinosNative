@@ -47,6 +47,9 @@ namespace Casinos
         void Start()
         {
             Debug.Log("MbNative.Start() Bugly Init！");
+
+            var openinstall = GetComponent<io.openinstall.unity.OpenInstall>();
+            openinstall.RegisterWakeupHandler(_onWakeupFinish);
         }
 
         //---------------------------------------------------------------------
@@ -57,6 +60,14 @@ namespace Casinos
         //---------------------------------------------------------------------
         void OnDestroy()
         {
+        }
+
+        //---------------------------------------------------------------------
+        void _onWakeupFinish(io.openinstall.unity.OpenInstallData wakeup_data)
+        {
+            var log = string.Format("MbNative._onWakeupFinish() 渠道编号={0}，自定义数据={1}",
+                wakeup_data.channelCode, wakeup_data.bindData);
+            CasinosContext.Instance.AddLog(log);
         }
     }
 }

@@ -20,6 +20,9 @@ namespace Casinos
     [CSharpCallLua]
     public delegate void DelegateLua4(LuaTable lua_table, List<AssetBundle> list_ab);
 
+    [CSharpCallLua]
+    public delegate void DelegateLua5(LuaTable lua_table, string s);
+
     public static class LuaCustomSettings
     {
         //---------------------------------------------------------------------

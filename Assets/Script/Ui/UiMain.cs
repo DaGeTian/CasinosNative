@@ -14,7 +14,9 @@ namespace Casinos
         GButton BtnBugly { get; set; }
         GButton BtnLuaLog { get; set; }
         GRichTextField TxtInfo { get; set; }
+        GList ListLog { get; set; }
         float TxtInfoTm { get; set; }
+        int Count { get; set; }
 
         //---------------------------------------------------------------------
         public override void OnCreate()
@@ -29,6 +31,9 @@ namespace Casinos
             BtnLuaLog.onClick.Add(_onClickBtnLuaLog);
 
             TxtInfo = ComUi.GetChild("TxtInfo").asRichTextField;
+
+            ListLog = ComUi.GetChild("ListLog").asList;
+            ListLog.RemoveChildren();
         }
 
         //---------------------------------------------------------------------
@@ -51,9 +56,13 @@ namespace Casinos
         }
 
         //---------------------------------------------------------------------
-        public void CallByLua()
+        public void AddLog(string log)
         {
-            TxtInfo.text = "OnClick BtnLuaLog, CallByLua()";
+            GComponent com = UIPackage.CreateObject("Main", "ListItemLog").asCom;
+            var txt_log = com.GetChild("TxtLog").asTextField;
+            txt_log.text = log;
+
+            ListLog.AddChildAt(com, 0);
         }
 
         //---------------------------------------------------------------------
@@ -79,8 +88,10 @@ namespace Casinos
         {
             var lua_mgr = CasinosContext.Instance.LuaMgr;
             var lua_launch = lua_mgr.LuaEnv.Global.Get<LuaTable>("Launch");
-            var func = lua_launch.Get<DelegateLua1>("TestLog");
-            func(lua_launch);
+            var func = lua_launch.Get<DelegateLua5>("Log");
+
+            Count++;
+            func(lua_launch, "UiMain._onClickBtnLuaLog() Count=" + Count);
         }
     }
 

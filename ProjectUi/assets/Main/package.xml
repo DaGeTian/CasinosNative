@@ -57,6 +57,7 @@
     <component id="jy2p1j" name="BtnClose.xml" path="/Component/"/>
     <image id="jy2p1k" name="BgSmall.png" path="/Image/"/>
     <component id="jy2p1l" name="Btn1.xml" path="/Component/"/>
+    <component id="gg2o1m" name="ListItemLog.xml" path="/Component/" exported="true"/>
   </resources>
   <publish name="Main" path="D:\CasinosNativeGithub\Assets\Resources\Ui"/>
 </packageDescription>
