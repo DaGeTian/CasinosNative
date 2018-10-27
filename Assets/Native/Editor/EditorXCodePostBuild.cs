@@ -15,6 +15,7 @@ namespace Casinos
 
     public static class EditorXCodePostBuild
     {
+        //---------------------------------------------------------------------
         [PostProcessBuild]
         public static void OnPostprocessBuild(BuildTarget build_target, string path)
         {
@@ -60,11 +61,18 @@ namespace Casinos
             plist.ReadFromString(File.ReadAllText(plist_path));
             PlistElementDict root_dict = plist.root;
             root_dict.SetString("com.openinstall.APP_KEY", "znc4d4");// OpenInstall
+            // NativeToolkit
+            root_dict.SetString("NSPhotoLibraryUsageDescription", "Requires access to the Photo Library");
+            root_dict.SetString("NSPhotoLibraryAddUsageDescription", "Requires access to the Photo Library");
+            root_dict.SetString("NSCameraUsageDescription", "Requires access to the Camera");
+            root_dict.SetString("NSContactsUsageDescription", "Requires access to Contacts");
+            root_dict.SetString("NSLocationAlwaysUsageDescription", "Requires access to Location");
+            root_dict.SetString("NSLocationWhenInUseUsageDescription", "Requires access to Location");
+            root_dict.SetString("NSLocationAlwaysAndWhenInUseUsageDescription", "Requires access to Location");
 
             // 保存plist
             plist.WriteToFile(plist_path);
+#endif
         }
     }
 }
-
-#endif

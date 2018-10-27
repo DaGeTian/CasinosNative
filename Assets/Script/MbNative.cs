@@ -47,9 +47,14 @@ namespace Casinos
         void Start()
         {
             CasinosContext.Instance.AddLog("OpenInstall.RegisterWakeupHandler(_onWakeupFinish)");
+            Debug.Log("RegisterWakeupHandler, GetInstall");
 
             var openinstall = GetComponent<io.openinstall.unity.OpenInstall>();
             openinstall.RegisterWakeupHandler(_onWakeupFinish);
+            openinstall.GetInstall(60, _onGetInstallFinish);
+
+            //openinstall.ReportRegister();
+            //openinstall.ReportEffectPoint("aaa", 1);
         }
 
         //---------------------------------------------------------------------
@@ -63,10 +68,46 @@ namespace Casinos
         }
 
         //---------------------------------------------------------------------
-        void _onWakeupFinish(io.openinstall.unity.OpenInstallData wakeup_data)
+        void _onGetInstallFinish(io.openinstall.unity.OpenInstallData data)
         {
+            Debug.Log("_onGetInstallFinish");
+
+            string channel_code = " ";
+            if (!string.IsNullOrEmpty(data.channelCode))
+            {
+                channel_code = data.channelCode;
+            }
+
+            string bind_data = " ";
+            if (!string.IsNullOrEmpty(data.bindData))
+            {
+                bind_data = data.bindData;
+            }
+
+            var log = string.Format("MbNative._onGetInstallFinish() 渠道编号={0}，自定义数据={1}",
+                channel_code, bind_data);
+            CasinosContext.Instance.AddLog(log);
+        }
+
+        //---------------------------------------------------------------------
+        void _onWakeupFinish(io.openinstall.unity.OpenInstallData data)
+        {
+            Debug.Log("_onWakeupFinish");
+
+            string channel_code = " ";
+            if (!string.IsNullOrEmpty(data.channelCode))
+            {
+                channel_code = data.channelCode;
+            }
+
+            string bind_data = " ";
+            if (!string.IsNullOrEmpty(data.bindData))
+            {
+                bind_data = data.bindData;
+            }
+
             var log = string.Format("MbNative._onWakeupFinish() 渠道编号={0}，自定义数据={1}",
-                wakeup_data.channelCode, wakeup_data.bindData);
+                channel_code, bind_data);
             CasinosContext.Instance.AddLog(log);
         }
     }
