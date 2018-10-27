@@ -2,7 +2,6 @@
 
 namespace Casinos
 {
-    using System;
     using UnityEngine;
     using FairyGUI;
     using XLua;
