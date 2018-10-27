@@ -1,0 +1,91 @@
+-- Copyright(c) Cragon. All rights reserved.
+
+---------------------------------------
+-- 配置，Launch
+LaunchConfig = {}
+
+function LaunchConfig:new(o)
+    o = o or {}
+    setmetatable(o, self)
+    self.__index = self
+    self.CasinosContext = CS.Casinos.CasinosContext.Instance
+    self.LuaMgr = CS.Casinos.CasinosContext.Instance.LuaMgr
+    self.Env = 'Pro'
+    
+    -- 获取Env值
+    local env_key = "Env"
+    if (CS.UnityEngine.PlayerPrefs.HasKey(env_key) == true) then
+        self.Env = CS.UnityEngine.PlayerPrefs.GetString(env_key)
+    end
+
+    return o
+end
+
+---------------------------------------
+Launch = {}
+
+---------------------------------------
+function Launch:new(o)
+    o = o or {}
+    setmetatable(o, self)
+    self.__index = self
+    if (self.Instance == nil) then
+        self.LaunchCfg = LaunchConfig:new(nil)
+        self.CasinosContext = CS.Casinos.CasinosContext.Instance
+        self.LuaMgr = CS.Casinos.CasinosContext.Instance.LuaMgr
+		self.UiMgr = CS.Casinos.CasinosContext.Instance.UiMgr
+        self.Instance = o
+    end
+    return self.Instance
+end
+
+---------------------------------------
+-- 初始化
+function Launch:Setup()
+    Launch:new(nil)
+    print('Launch:Setup() Env=' .. self.LaunchCfg.Env)
+end
+
+---------------------------------------
+-- 应用程序退出
+function Launch:Close()
+    self.CasinosContext = nil
+    self.LuaMgr = nil
+    self.Instance = nil
+    print("Launch:Release()")
+end
+
+---------------------------------------
+-- 测试日志
+function Launch:TestLog()
+    print('Launch:TestLog() Env=' .. self.LaunchCfg.Env)
+	local ui_main = self.UiMgr:GetUiMain()
+	ui_main:CallByLua()
+end
+
+---------------------------------------
+-- App暂停，恢复运行
+function Launch:OnApplicationPause(pause)
+    print('OnApplicationPause, Pause=' .. tostring(pause))
+end
+
+---------------------------------------
+-- App获取，失去焦点
+function Launch:OnApplicationFocus(focus_state)
+    print('OnApplicationFocus, FocusState=' .. tostring(focus_state))
+end
+
+---------------------------------------
+-- FairyGUI.AddPackage
+function Launch:_addUiPackage(name)
+    if (self.CasinosContext.PathMgr.DirLaunchAbType == CS.Casinos.DirType.Raw) then
+        local path_ab = self.CasinosContext.PathMgr.DirLaunchAb .. string.lower(name) .. ".ab"
+        local ab = CS.UnityEngine.AssetBundle.LoadFromFile(path_ab)
+        local ui_package = CS.FairyGUI.UIPackage.AddPackage(ab)
+        return ui_package
+    else
+        local path_ab = self.CasinosContext.PathMgr.DirLaunchAb .. string.lower(name) .. "/" .. string.lower(name)
+        local ui_package = CS.FairyGUI.UIPackage.AddPackage(path_ab)
+        return ui_package
+    end
+end

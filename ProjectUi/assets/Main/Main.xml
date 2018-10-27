@@ -17,9 +17,9 @@
       <relation target="" sidePair="left-left,top-top"/>
       <Button title="Bugly" titleColor="#ffffff" titleFontSize="20"/>
     </component>
-    <component id="n7_jy2p" name="BtnBugly1" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,105" size="128,47">
+    <component id="n7_jy2p" name="BtnLuaLog" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,105" size="128,47">
       <relation target="" sidePair="left-left,top-top"/>
-      <Button title="Bugly" titleColor="#ffffff" titleFontSize="20"/>
+      <Button title="LuaLog" titleColor="#ffffff" titleFontSize="20"/>
     </component>
     <component id="n8_jy2p" name="BtnBugly2" src="jy2p1l" fileName="Component/Btn1.xml" xy="61,160" size="128,47">
       <relation target="" sidePair="left-left,top-top"/>
@@ -42,5 +42,4 @@
       <Button title="Bugly" titleColor="#ffffff" titleFontSize="20"/>
     </component>
   </displayList>
-  <relation target="" sidePair="width-width,height-height"/>
 </component>

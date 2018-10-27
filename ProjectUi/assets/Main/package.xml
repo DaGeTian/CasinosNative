@@ -58,5 +58,5 @@
     <image id="jy2p1k" name="BgSmall.png" path="/Image/"/>
     <component id="jy2p1l" name="Btn1.xml" path="/Component/"/>
   </resources>
-  <publish name="Main" path="/Users/yongli/Work/CasinosNativeGithub/Assets/Resources/Ui"/>
+  <publish name="Main" path="D:\CasinosNativeGithub\Assets\Resources\Ui"/>
 </packageDescription>
