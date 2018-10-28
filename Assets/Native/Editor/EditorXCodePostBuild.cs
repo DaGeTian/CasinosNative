@@ -32,8 +32,8 @@ namespace Casinos
             proj.SetBuildProperty(target, "ENABLE_BITCODE", "NO");
 
             // 添加依赖库
-            proj.AddFrameworkToProject(target, "PushKit.framework", false);
-            proj.AddFrameworkToProject(target, "UserNotifications.framework", false);
+            proj.AddFrameworkToProject(target, "PushKit.framework", true);
+            proj.AddFrameworkToProject(target, "UserNotifications.framework", true);
             proj.AddFrameworkToProject(target, "libicucore.tbd", false);
             proj.AddFrameworkToProject(target, "libz.1.2.5.tbd", false);
             proj.AddFrameworkToProject(target, "libsqlite3.tbd", false);
@@ -49,18 +49,36 @@ namespace Casinos
             // 设置签名
             //proj.SetBuildProperty (target, "CODE_SIGN_IDENTITY", "iPhone Distribution: _______________");
             //proj.SetBuildProperty (target, "PROVISIONING_PROFILE", "********-****-****-****-************");
+            //string debugConfig = proj.BuildConfigByName(target, "Debug");
+            //string releaseConfig = proj.BuildConfigByName(target, "Release");
 
-            proj.AddCapability(target, PBXCapabilityType.AssociatedDomains);// OpenInstall
+            //proj.SetBuildPropertyForConfig(debugConfig, "PROVISIONING_PROFILE", "证书");
+            //proj.SetBuildPropertyForConfig(releaseConfig, "PROVISIONING_PROFILE", "证书");
+            //proj.SetBuildPropertyForConfig(debugConfig, "PROVISIONING_PROFILE(Deprecated)", "证书");
+            //proj.SetBuildPropertyForConfig(releaseConfig, "PROVISIONING_PROFILE(Deprecated)", "证书");
+
+            //proj.SetBuildPropertyForConfig(debugConfig, "CODE_SIGN_IDENTITY", "自己的证书");
+            //proj.SetBuildPropertyForConfig(releaseConfig, "CODE_SIGN_IDENTITY", "自己的证书");
+
+            //proj.SetTeamId(target, "Team ID(自己的teamid)");
+
+            //proj.AddCapability(target, PBXCapabilityType.AssociatedDomains);
 
             // 保存工程
             proj.WriteToFile(proj_path);
+
+            ProjectCapabilityManager proj_capability_mgr = new ProjectCapabilityManager(proj_path, "KingNative.entitlements", PBXProject.GetUnityTargetName());
+            proj_capability_mgr.AddAssociatedDomains(new string[] { "applinks:x9g39c.openinstall.io" });// OpenInstall
+            proj_capability_mgr.AddPushNotifications(false);
+            proj_capability_mgr.AddBackgroundModes(BackgroundModesOptions.RemoteNotifications);
+            proj_capability_mgr.WriteToFile();
 
             // 修改plist
             string plist_path = path + "/Info.plist";
             PlistDocument plist = new PlistDocument();
             plist.ReadFromString(File.ReadAllText(plist_path));
             PlistElementDict root_dict = plist.root;
-            root_dict.SetString("com.openinstall.APP_KEY", "znc4d4");// OpenInstall
+            root_dict.SetString("com.openinstall.APP_KEY", "x9g39c");// OpenInstall
             // NativeToolkit
             root_dict.SetString("NSPhotoLibraryUsageDescription", "Requires access to the Photo Library");
             root_dict.SetString("NSPhotoLibraryAddUsageDescription", "Requires access to the Photo Library");
