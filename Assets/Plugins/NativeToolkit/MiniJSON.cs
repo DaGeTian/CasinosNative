@@ -32,7 +32,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace MiniJSON {
+namespace MiniJSON1 {
     // Example usage:
     //
     //  using UnityEngine;
