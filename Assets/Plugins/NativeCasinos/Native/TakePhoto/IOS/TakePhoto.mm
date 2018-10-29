@@ -45,8 +45,6 @@
     else
         [sheet showInView:UnityGetGLViewController().view];
     
-    [sheet release];
-    
     [self showPicker:UIImagePickerControllerSourceTypeCamera];
 }
 
@@ -57,8 +55,7 @@
         [sheet showFromRect:CGRectMake( 0, 0, mTakePhotoWidth, mTakePhotoHeight ) inView:UnityGetGLViewController().view animated:YES];
     else
         [sheet showInView:UnityGetGLViewController().view];
-    
-    [sheet release];
+
     [self showPicker:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
@@ -81,7 +78,7 @@
 
 - (void)showPicker:(UIImagePickerControllerSourceType)type
 {
-    UIImagePickerController *picker = [[[UIImagePickerController alloc] init] autorelease];
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.sourceType = type;
     picker.allowsEditing = YES;

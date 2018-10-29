@@ -41,15 +41,15 @@ public class Pay
             mPay = new Pay();
         }
 
-#if UNITY_IOS
-        GameObject openiab_msg_receiver = GameObject.Find(OPENIAB_EVENT_RECEIVER);
-        if (openiab_msg_receiver == null)
-        {
-            openiab_msg_receiver = new GameObject(OPENIAB_EVENT_RECEIVER);
-            openiab_msg_receiver.AddComponent<OpenIABEventManager>();
-            GameObject.DontDestroyOnLoad(openiab_msg_receiver);
-        }
-#endif
+//#if UNITY_IOS
+//        GameObject openiab_msg_receiver = GameObject.Find(OPENIAB_EVENT_RECEIVER);
+//        if (openiab_msg_receiver == null)
+//        {
+//            openiab_msg_receiver = new GameObject(OPENIAB_EVENT_RECEIVER);
+//            openiab_msg_receiver.AddComponent<OpenIABEventManager>();
+//            GameObject.DontDestroyOnLoad(openiab_msg_receiver);
+//        }
+//#endif
 
         return mPay;
     }
