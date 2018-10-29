@@ -32,19 +32,32 @@ namespace Casinos
             proj.SetBuildProperty(target, "ENABLE_BITCODE", "NO");
 
             // 添加依赖库
-            proj.AddFrameworkToProject(target, "PushKit.framework", true);
-            proj.AddFrameworkToProject(target, "UserNotifications.framework", true);
+            proj.AddFrameworkToProject(target, "libc++.dylib", false);
+            proj.AddFrameworkToProject(target, "libsqlite3.dylib", false);
+            proj.AddFrameworkToProject(target, "libz.dylib", false);
+
+            proj.AddFrameworkToProject(target, "libc++.tbd", false);
             proj.AddFrameworkToProject(target, "libicucore.tbd", false);
-            proj.AddFrameworkToProject(target, "libz.1.2.5.tbd", false);
             proj.AddFrameworkToProject(target, "libsqlite3.tbd", false);
             proj.AddFrameworkToProject(target, "libz.tbd", false);
-            proj.AddFrameworkToProject(target, "libc++.tbd", false);
+            proj.AddFrameworkToProject(target, "libz.1.2.5.tbd", false);
 
-            //proj.AddFrameworkToProject(target, "libc++.dylib", false);// libc++库依赖
+            proj.AddFrameworkToProject(target, "Accelerate.framework", false);
+            proj.AddFrameworkToProject(target, "AudioToolbox.framework", false);
+            proj.AddFrameworkToProject(target, "AVFoundation.framework", false);
+            proj.AddFrameworkToProject(target, "CFNetwork.framework", false);
+            proj.AddFrameworkToProject(target, "CoreLocation.framework", false);
+            proj.AddFrameworkToProject(target, "CoreMedia.framework", false);
+            proj.AddFrameworkToProject(target, "CoreMotion.framework", false);
+            proj.AddFrameworkToProject(target, "CoreTelephony.framework", false);
+            proj.AddFrameworkToProject(target, "CoreVideo.framework", false);
+            proj.AddFrameworkToProject(target, "JavaScriptCore.framework", true);// 设置为Optional
+            proj.AddFrameworkToProject(target, "MessageUI.framework", false);
+            proj.AddFrameworkToProject(target, "MobileCoreServices.framework", false);
+            proj.AddFrameworkToProject(target, "PushKit.framework", true);
             proj.AddFrameworkToProject(target, "Security.framework", false);// 用于存储keychain
             proj.AddFrameworkToProject(target, "SystemConfiguration.framework", false);// 用于读取异常发生时的系统信息
-            proj.AddFrameworkToProject(target, "JavaScriptCore.framework", true);// 设置为Optional
-            proj.AddFrameworkToProject(target, "CoreTelephony.framework", false);
+            proj.AddFrameworkToProject(target, "UserNotifications.framework", true);
 
             // 设置签名
             //proj.SetBuildProperty (target, "CODE_SIGN_IDENTITY", "iPhone Distribution: _______________");
